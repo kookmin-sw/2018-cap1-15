@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+1. 프로잭트 소개
+VR을 통한 부동산 매물 소개 및 가구 인테리어
 
-You can use the [editor on GitHub](https://github.com/kookmin-sw/cap-template/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+유니티를 이용하여 제작
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+2. 소개 영상
+3. 팀 소개
+20123368 박희상
 
-### Markdown
+https://github.com/phs6417
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+20123383 안재현
 
-```markdown
-Syntax highlighted code block
+https://github.com/AnJaeHyun
 
-# Header 1
-## Header 2
-### Header 3
+20123384 안준열
 
-- Bulleted
-- List
+https://github.com/mirjun21
 
-1. Numbered
-2. List
+20123398 이산하
 
-**Bold** and _Italic_ and `Code` text
+https://github.com/mountrivers
 
-[Link](url) and ![Image](src)
-```
+4. 사용법
+소스코드제출시 설치법이나 사용법을 작성하세요.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kookmin-sw/cap-template/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+5. 기타
+추가적인 내용은 자유롭게 작성하세요.
