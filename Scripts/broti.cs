@@ -6,13 +6,11 @@ public class broti : MonoBehaviour {
     public GameObject tric;
     public AudioSource sounds;
     public AudioSource tria;
-    public GameObject efe;
     int ontoken = 0;
     int randomeMotion = 0;
     // Use this for initialization
     void Start()
     {
-        efe.SetActive(false);
         StartCoroutine("DoAni");
     }
 
@@ -29,9 +27,8 @@ public class broti : MonoBehaviour {
         ontoken = 1;
         tria.Play();
         Animation animationobj = tric.GetComponentInChildren<Animation>();
-
-        iTween.MoveTo(tric, iTween.Hash("path", iTweenPath.GetPath("br"), "easeType", "easeOutCirc", "time", 8, "orienttopath", true));
         animationobj.Play("Walk");
+        iTween.MoveTo(tric, iTween.Hash("path", iTweenPath.GetPath("br"), "easeType", "easeOutCirc", "time", 8, "orienttopath", true));
         yield return new WaitForSeconds(2.5f);
         yield return new WaitForSeconds(2.5f);
         sounds.Play();
