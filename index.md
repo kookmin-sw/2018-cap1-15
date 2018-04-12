@@ -2,13 +2,13 @@
 
 ### 1. 프로잭트 소개
 
-VR 과 AR을 통해 정적인 전시물을 생동감있게 체험하며 학습한다
+정적인 전시물을 VR 과 AR을 통하여 생동감있게 체험하고 학습한다.
 
-전시장 및 박물관을 직접 가보지않고도 해당 전시물의 지식을 얻을수 있으며
+소비자는 흥미유발, 전시물에 대한 지식 습득, 거리의 제약 극복이란 이점이 있고
 
-해당 기관과 연계하여 홍보 및 전시물 간접 체험 서비스
+박물관 측은 소비자의 관심확대로 인한 홍보 효과를 누릴 수 있다
 
-유니티를 이용하여 제작
+개발도구 : 유니티
 
 ### 2. 소개 영상
 
@@ -38,10 +38,15 @@ https://github.com/mirjun21
 
 https://github.com/mountrivers
 
-### 4. 사용법
+### 4. Abstract(영문요약)
+Through this project, you can experience and learn static exhibits vividly through VR and AR.
 
+Users can overcome the constraints of distance, acquire knowledge about exhibits and have a interests in exhibits.
+
+The museums can enjoy the publicity effect by interest inducement.
+
+### 5. 사용법
 소스코드제출시 설치법이나 사용법을 작성하세요.
 
-### 5. 기타
-
+### 6. 기타
 추가적인 내용은 자유롭게 작성하세요.
