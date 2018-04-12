@@ -9,21 +9,28 @@ public class buttonManger : GvrAllEventsTrigger
 {
 
     public GameObject Uis;
+    public GameObject TriO;
+    public GameObject TriB;
+    public GameObject BroO;
+    public GameObject BroB;
     int ist;
     string tname;
     string outname;
+    int TriOpend = 0;
+    int BroOpend = 0;
     // Use this for initialization
     void Start()
     {
-        HideCube2();
+        //HideCube2();
+        OnPointerEnter.AddListener(Getingtarget);
+        OnPointerUp.AddListener(Getingtargetu);
+        OnPointerExit.AddListener(Getingtargeto);
     }
 
     // Update is called once per frame
     void Update()
     {
-        OnPointerEnter.AddListener(Getingtarget);
-        OnPointerUp.AddListener(Getingtargetu);
-        OnPointerExit.AddListener(Getingtargeto);
+       
     }
     public void Getingtarget(GameObject target, PointerEventData eventData)
     {
@@ -57,10 +64,27 @@ public class buttonManger : GvrAllEventsTrigger
                 Uis.SetActive(true);
             }
         }
-        if (tname == "Cubes")
+        if (tname == "TriCube")
+        {
+            if (TriOpend == 0)
+            {
+                TriO.SetActive(true);
+                TriB.SetActive(true);
+                TriOpend = 1;
+            }
+           // StartCoroutine(DoWait());
+
+        }
+        if (tname == "BroCube")
         {
 
-            StartCoroutine(DoWait());
+            if (BroOpend == 0)
+            {
+                BroO.SetActive(true);
+                BroB.SetActive(true);
+                BroOpend = 1;
+            }
+            // StartCoroutine(DoWait());
 
         }
     }

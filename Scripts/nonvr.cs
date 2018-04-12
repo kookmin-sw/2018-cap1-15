@@ -7,7 +7,7 @@ public class nonvr : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        VRSettings.enabled = false;
+        UnityEngine.VR.VRSettings.enabled = false;
     }
 	
 	// Update is called once per frame
