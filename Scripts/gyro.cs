@@ -3,30 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class gyro : MonoBehaviour {
-    float _BaseAngle = -90f;
     int gyroCoin = 0;
+
+    Quaternion origin = Quaternion.identity;
+
+
     void Start()
     {
     }
 
+
     void Update()
     {
-        if (gyroCoin ==1)
+        if (Input.gyro.enabled)
         {
-            Quaternion q1 = Input.gyro.attitude;
-            Quaternion q2 = new Quaternion(q1.y, -q1.z, -q1.x, q1.w);
+            // reset origin on touch or not yet set origin
+            if (Input.touchCount > 0 || origin == Quaternion.identity)
+                origin = Input.gyro.attitude;
 
-            transform.rotation = Quaternion.Euler(new Vector3(q2.eulerAngles.x, _BaseAngle, q2.eulerAngles.z));
-            if (transform.rotation.eulerAngles.z <= 275f && transform.rotation.eulerAngles.z > 180f)
-                transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 275f));
-            if (transform.rotation.eulerAngles.z >= 355f || transform.rotation.eulerAngles.z <= 180f)
-                transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 355f));
+            transform.localRotation = Quaternion.Inverse(origin) * Input.gyro.attitude;
         }
     }
+
+
+    void OnGUI()
+    {
+        GUILayout.Label(origin.eulerAngles + " <- origin");
+        GUILayout.Label(Input.gyro.attitude.eulerAngles + " <- gyro");
+        GUILayout.Label(Quaternion.Inverse(Input.gyro.attitude).eulerAngles + " <- inv gyro");
+        GUILayout.Label(transform.localRotation.eulerAngles + " <- localRotation");
+    }
+
 
     public void gyroOn()
     {
         Input.gyro.enabled = true;
+        origin = Input.gyro.attitude;
         gyroCoin = 1;
     }
     public void gyroOff()
