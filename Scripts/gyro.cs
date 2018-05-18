@@ -19,9 +19,11 @@ public class gyro : MonoBehaviour {
         {
             // reset origin on touch or not yet set origin
             if (Input.touchCount > 0 || origin == Quaternion.identity)
+            {
                 origin = Input.gyro.attitude;
-
-            transform.localRotation = Quaternion.Inverse(origin) * Input.gyro.attitude;
+            }
+                transform.localRotation = origin * Quaternion.Inverse(Input.gyro.attitude);
+            
         }
     }
 
@@ -38,7 +40,7 @@ public class gyro : MonoBehaviour {
     public void gyroOn()
     {
         Input.gyro.enabled = true;
-        origin = Input.gyro.attitude;
+        origin = new Quaternion(0, 0, 0, 0);
         gyroCoin = 1;
     }
     public void gyroOff()
