@@ -23,13 +23,15 @@ public class buttonManger : GvrAllEventsTrigger
     int TriOpend = 0;
     int BroOpend = 0;
     int vrCoin = 0;
+    int menuCOin = 0;
     // Use this for initialization
     void Start()
     {
         //HideCube2();
+        /*
         OnPointerEnter.AddListener(Getingtarget);
         OnPointerUp.AddListener(Getingtargetu);
-        OnPointerExit.AddListener(Getingtargeto);
+        OnPointerExit.AddListener(Getingtargeto);*/
         UnityEngine.XR.XRSettings.enabled = true;
     }
 
@@ -38,6 +40,9 @@ public class buttonManger : GvrAllEventsTrigger
     {
 
     }
+
+    //          Getting Target Object 타겟 오브젝트 받던것. 안드로이드 빌드시 문제땜에 현재는 사용 안함. 
+    /*
     public void Getingtarget(GameObject target, PointerEventData eventData)
     {
         if (target)
@@ -53,83 +58,164 @@ public class buttonManger : GvrAllEventsTrigger
     {
         if (target)
             outname = target.name;
-    }
-    // later we should change the function name like Dino1,Dino2 for reusability
+    }*/
+
+
+    //          Tri Open
     public void Triopen()
     {
-        if (TriOpend == 0)
-        {
-            TriO.SetActive(true);
-            TriB.SetActive(true);
-            TriOpend = 1;
-        }
+        StartCoroutine(TriOpenC());
     }
+    public void TriOpenS()
+    {
+        StopAllCoroutines();
+    }
+    IEnumerator TriOpenC()
+    {
+        yield return new WaitForSeconds(3);
+        if (menuCOin == 0)
+            if (TriOpend == 0)
+            {
+                TriO.SetActive(true);
+                TriB.SetActive(true);
+                TriOpend = 1;
+            }
+    }
+
+    //          Bro Open
     public void Broopen()
     {
-        if (BroOpend == 0)
-        {
-            BroO.SetActive(true);
-            BroB.SetActive(true);
-            BroOpend = 1;
-        }
+        StartCoroutine(BroOpenC());
     }
+    public void BroOpenS()
+    {
+        StopAllCoroutines();
+    }
+    IEnumerator BroOpenC()
+    {
+        yield return new WaitForSeconds(3);
+        if (menuCOin == 0)
+            if (BroOpend == 0)
+            {
+                BroO.SetActive(true);
+                BroB.SetActive(true);
+                BroOpend = 1;
+            }
+    }
+
+    //          Not Using Now
     public void ShowCube2()
     {
         print(tname);
         // Do nothing now. just for test function
         // after should delete it :D
     }
-
     public void HideCube2()
     {
         Uis.SetActive(false);
     }
-    IEnumerator DoWait()
-    {
-        outname = "0";
-        yield return new WaitForSeconds(3);
-        if (outname == "0")
-            SceneManager.LoadScene("k");
-        print(outname);
-        // Have to make delay system ;(
 
-    }
+    //         Show Menu 
     public void ShowMenu()
     {
-        Menus.SetActive(true);
+        StartCoroutine(ShowMenuC());
     }
+    public void ShowMenuS()
+    {
+        StopAllCoroutines();
+    }
+    IEnumerator ShowMenuC()
+    {
+
+        yield return new WaitForSeconds(3);
+        if (menuCOin == 0)
+        {
+            Menus.SetActive(true);
+            menuCOin = 1;
+        }
+    }
+
+    //          Go To Menu 
     public void GoToMenu()
     {
+        StartCoroutine(GoToMenuC());
+    }
+    public void GoToMenuS()
+    {
+        StopAllCoroutines();
+    }
+    IEnumerator GoToMenuC()
+    {
+
+        yield return new WaitForSeconds(3);
         StartCoroutine(SwitchTo2D());
         SceneManager.LoadScene("startScene/tmpUI_03");
     }
+
+    //          Menu Cancle
     public void Cancle()
     {
-        Menus.SetActive(false);
+        StartCoroutine(CancleC());
     }
+    public void CancleS()
+    {
+        StopAllCoroutines();
+    }
+    IEnumerator CancleC()
+    {
+
+        yield return new WaitForSeconds(3);
+        Menus.SetActive(false);
+        menuCOin = 0;
+    }
+
+    //          Change 3d -> 2d 
     public void Change3d22d()
     {
-        //StartCoroutine(SwitchTo2D());
-        if (vrCoin == 0)
+        StartCoroutine(Change3d22dC());
+    }
+    public void Change3d22dS()
+    {
+        StopAllCoroutines();
+    }
+    IEnumerator Change3d22dC()
+    {
+        yield return new WaitForSeconds(3);
+        if (menuCOin == 0)
         {
-            StartCoroutine(SwitchTo2D());
-            //cam.GetComponent<Gyro>().GyroOn();
-            vrCoin = 1;
-        }
-        else
-        {
-            StartCoroutine(SwitchToVR());
-            vrCoin = 0;
-           // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            
+            //StartCoroutine(SwitchTo2D());
+            if (vrCoin == 0)
+            {
+                StartCoroutine(SwitchTo2D());
+                //cam.GetComponent<Gyro>().GyroOn();
+                vrCoin = 1;
+            }
+            else
+            {
+                StartCoroutine(SwitchToVR());
+                vrCoin = 0;
+                // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
+
+            }
         }
     }
+
+    //          Change 2d -> 3d // StopAllCourtine use the 3d->2d Same as
     public void Change2d23D()
     {
-        StartCoroutine(SwitchToVR());
+        StartCoroutine(Change2d23DC());
  
     }
+    IEnumerator Change2d23DC()
+    {
+
+        yield return new WaitForSeconds(3);
+        if (menuCOin == 0)
+            StartCoroutine(SwitchToVR());
+    }
+
+    //          SwitchTo2d ( for going to menu)
     IEnumerator SwitchTo2D()
     {
         // Empty string loads the "None" device.
@@ -171,7 +257,9 @@ public class buttonManger : GvrAllEventsTrigger
         }
     }
     // Call via `StartCoroutine(SwitchToVR())` from your code. Or, use
-    // `yield SwitchToVR()` if calling from inside another coroutine.
+    
+        
+        // `yield SwitchToVR()` if calling from inside another coroutine.
     IEnumerator SwitchToVR()
     {
         // Device names are lowercase, as returned by `XRSettings.supportedDevices`.
@@ -190,4 +278,5 @@ public class buttonManger : GvrAllEventsTrigger
         // Now it's ok to enable VR mode.
         XRSettings.enabled = true;
     }
+
 }
