@@ -16,6 +16,7 @@ public class buttonManger : GvrAllEventsTrigger
     public GameObject BroO;
     public GameObject BroB;
     public GameObject cam;
+    public GameObject Menus;
     int ist;
     string tname;
     string outname;
@@ -93,6 +94,19 @@ public class buttonManger : GvrAllEventsTrigger
         // Have to make delay system ;(
 
     }
+    public void ShowMenu()
+    {
+        Menus.SetActive(true);
+    }
+    public void GoToMenu()
+    {
+        StartCoroutine(SwitchTo2D());
+        SceneManager.LoadScene("startScene/tmpUI_03");
+    }
+    public void Cancle()
+    {
+        Menus.SetActive(false);
+    }
     public void Change3d22d()
     {
         //StartCoroutine(SwitchTo2D());
@@ -108,6 +122,7 @@ public class buttonManger : GvrAllEventsTrigger
             vrCoin = 0;
            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             
+
         }
     }
     public void Change2d23D()
