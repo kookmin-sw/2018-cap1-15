@@ -11,7 +11,7 @@ public class ArStart : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(SwitchTo3dAr());
+       // StartCoroutine(SwitchTo3dAr());
 	}
 	
 	// Update is called once per frame
