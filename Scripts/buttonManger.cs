@@ -62,6 +62,7 @@ public class buttonManger : GvrAllEventsTrigger
 
 
     //          Tri Open
+
     public void Triopen()
     {
         StartCoroutine(TriOpenC());
@@ -74,12 +75,11 @@ public class buttonManger : GvrAllEventsTrigger
     {
         yield return new WaitForSeconds(3);
         if (menuCOin == 0)
-            if (TriOpend == 0)
-            {
-                TriO.SetActive(true);
-                TriB.SetActive(true);
-                TriOpend = 1;
-            }
+        {
+            TriO.SetActive(true);
+            TriB.SetActive(true);
+            TriOpend = 1;
+        }
     }
 
     //          Bro Open
@@ -94,9 +94,7 @@ public class buttonManger : GvrAllEventsTrigger
     IEnumerator BroOpenC()
     {
         yield return new WaitForSeconds(3);
-        if (menuCOin == 0)
-            if (BroOpend == 0)
-            {
+        if (menuCOin == 0) { 
                 BroO.SetActive(true);
                 BroB.SetActive(true);
                 BroOpend = 1;
