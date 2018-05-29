@@ -6,6 +6,8 @@ public class TriAni : MonoBehaviour {
     public GameObject tric;
     public AudioSource sounds;
     public AudioSource tria;
+    public AudioSource bf1;
+    public AudioSource bf2;
     public GameObject efe;
     int ontoken = 0;
     int randomeMotion = 0;
@@ -22,6 +24,9 @@ public class TriAni : MonoBehaviour {
 
     IEnumerator DoAni()
     {
+        bf1.Stop();
+        bf2.Stop();
+
         efe.SetActive(false);
         ontoken = 1;
         tria.Play();
