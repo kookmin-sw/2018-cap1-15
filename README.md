@@ -2,6 +2,8 @@
 
 ### 1. 프로잭트 소개
 
+<img width="600"> src="https://user-images.githubusercontent.com/21384231/40669769-aa5e0052-63a2-11e8-96c0-20c5c56b6b21.png"
+
 https://github.com/kookmin-sw/2018-cap1-15/blob/master/img/UI_Main.png
 
 정적인 전시물을 VR 과 AR을 통하여 생동감있게 체험하고 학습한다.
