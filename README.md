@@ -4,7 +4,6 @@
 
 <img width="600" src="https://user-images.githubusercontent.com/21384231/40669769-aa5e0052-63a2-11e8-96c0-20c5c56b6b21.png">
 
-https://github.com/kookmin-sw/2018-cap1-15/blob/master/img/UI_Main.png
 
 정적인 전시물을 VR 과 AR을 통하여 생동감있게 체험하고 학습한다.
 
@@ -14,7 +13,10 @@ https://github.com/kookmin-sw/2018-cap1-15/blob/master/img/UI_Main.png
 
 개발도구 : 유니티
 
-### 2. 소개 영상
+### 2. 프로젝트 실행 화면
+<img width="600" src="https://user-images.githubusercontent.com/21384231/40670108-8638b2c0-63a3-11e8-8494-156a705ed3e3.png">
+<img width="300" src="https://user-images.githubusercontent.com/21384231/40670182-b1882b2c-63a3-11e8-9a08-c21109a02c8d.png">
+<img width="300" src="https://user-images.githubusercontent.com/21384231/40670258-d98f9f1a-63a3-11e8-9eec-bba5bf99918e.png">
 
 
 
