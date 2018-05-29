@@ -15,9 +15,10 @@
 
 ### 2. 프로젝트 실행 화면
 <img width="600" src="https://user-images.githubusercontent.com/21384231/40670108-8638b2c0-63a3-11e8-8494-156a705ed3e3.png">
+<div>
 <img width="300" src="https://user-images.githubusercontent.com/21384231/40670182-b1882b2c-63a3-11e8-9a08-c21109a02c8d.png">
 <img width="300" src="https://user-images.githubusercontent.com/21384231/40670258-d98f9f1a-63a3-11e8-9eec-bba5bf99918e.png">
-
+</div>
 
 
 
